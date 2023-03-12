@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:15.2
+    restart: always
+    environment:
+      POSTGRES_DB: "MAIN_DB"
+      POSTGRES_USER: "klengs"
+      POSTGRES_PASSWORD: "Qwerty123"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - .:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
